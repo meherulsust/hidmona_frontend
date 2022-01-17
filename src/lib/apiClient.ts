@@ -28,7 +28,7 @@ class ApiClient {
 
   async authenticate(email: string, password: string): Promise<AuthResponse> {
     return this.httpClient
-      .post('/token', {
+      .post('/login', {
         data: { email, password },
       })
       .then((response) => {
