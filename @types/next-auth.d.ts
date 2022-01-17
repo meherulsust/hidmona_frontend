@@ -9,14 +9,16 @@ declare module 'next-auth' {
     refreshToken: string;
     tokenType: string;
     permissions: string[];
-    tokenExpiryTime: number;
+    tokenExpiryTime: string;
   }
 
   interface Session {
-    email: string;
-    fullName: string;
-    permissions: string[];
-    tokenExpiryTime: number;
+    user?: {
+      email: string;
+      fullName: string;
+      permissions: string[];
+    };
+    tokenExpiryTime: string;
   }
 }
 
@@ -28,6 +30,6 @@ declare module 'next-auth/jwt' {
     token: string;
     refreshToken: string;
     tokenType: string;
-    tokenExpiryTime: number;
+    tokenExpiryTime: string;
   }
 }

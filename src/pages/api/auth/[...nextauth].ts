@@ -11,14 +11,14 @@ export default NextAuth({
     async jwt(token, user) {
       // Initial sign in
       if (user) {
-        token = {
+        return {
           ...token,
           ...user,
         };
       }
 
       // Return previous token if the access token has not expired yet
-      if (Date.now() < token.tokenExpiryTime) {
+      if (Date.now() < new Date(token.tokenExpiryTime).getTime()) {
         return token;
       }
 
@@ -37,10 +37,10 @@ export default NextAuth({
           refreshToken: response.refresh_token,
           tokenExpiryTime: calculateTokenExpiryTime(response.expiry_time),
         };
-      } catch (error: any) {
+      } catch (err: any) {
         logger.error(
-          `[next-auth] refresh token api [${error?.status}] ${JSON.stringify(
-            error?.data
+          `[next-auth] refresh token api [${err?.status}] ${JSON.stringify(
+            err?.data
           )}`
         );
 
@@ -51,9 +51,12 @@ export default NextAuth({
     async session(session, token) {
       return {
         ...session,
-        email: token.email,
-        permissions: token.permissions,
-        fullName: token.fullName,
+        user: {
+          email: token.email,
+          permissions: token.permissions,
+          fullName: token.fullName,
+        },
+        tokenExpiryTime: token.tokenExpiryTime,
       };
     },
   },
@@ -87,7 +90,7 @@ export default NextAuth({
       async authorize(
         credentials: Record<'email' | 'password' | 'callbackUrl', string>
       ) {
-        const { email, password } = credentials;
+        const { email, password, callbackUrl } = credentials;
 
         try {
           const apiService = new ApiClient(process.env.API_BASE_URL!);
@@ -107,13 +110,10 @@ export default NextAuth({
             `signin api [${err?.status}] ${JSON.stringify(err?.data)}`
           );
 
-          const code = err?.data?.status || '';
-
-          if (code === 'ALREADY_LOGGED_IN') {
-            throw new Error('AlreadyLoggedIn');
-          }
-
-          return null;
+          // eslint-disable-next-line no-throw-literal
+          throw `/auth/login?callbackUrl=${encodeURIComponent(
+            callbackUrl
+          )}&error=CredentialsSignin`;
         }
       },
     }),
@@ -139,5 +139,5 @@ function calculateTokenExpiryTime(originalExpiryTime: string) {
     (expiryTimeInMs - currentTimeInMs) * 0.95
   );
 
-  return currentTimeInMs + expiryThresholdInMs;
+  return new Date(currentTimeInMs + expiryThresholdInMs).toISOString();
 }
