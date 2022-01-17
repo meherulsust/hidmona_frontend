@@ -1,0 +1,7 @@
+.git
+.husky
+.next
+mock-api
+node_modules
+*Dockerfile*
+*docker-compose*

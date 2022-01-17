@@ -1,0 +1,95 @@
+.vs-btn {
+  @apply rounded transition duration-300 ease-linear;
+}
+
+.vs-btn:focus {
+  @apply outline-none ring ring-offset-2;
+}
+
+.vs-btn.vs-btn-full {
+  @apply w-full;
+}
+
+/* Disabled Button */
+.vs-btn:disabled {
+  @apply cursor-not-allowed bg-opacity-60;
+}
+
+/* Primary Button */
+.vs-btn-primary {
+  @apply bg-primary text-white;
+}
+
+.vs-btn-primary:not([disabled]):hover {
+  @apply bg-primary-800;
+}
+
+.vs-btn-primary:focus {
+  @apply ring-primary-800;
+}
+
+/* Primary Outline */
+.vs-btn-primary-outline {
+  @apply border border-primary text-primary;
+}
+
+.vs-btn-primary-outline:not([disabled]):hover {
+  @apply text-white bg-primary border-primary;
+}
+
+.vs-btn-primary-outline:focus {
+  @apply border-primary bg-primary text-white ring-primary;
+}
+
+.vs-btn-danger {
+  @apply bg-red-500 text-white;
+}
+
+.vs-btn-danger:not([disabled]):hover {
+  @apply bg-red-600;
+}
+
+.vs-btn-danger:focus {
+  @apply ring-red-600;
+}
+
+.vs-btn-danger-outline {
+  @apply border border-red-500 text-red-500;
+}
+
+.vs-btn-danger-outline:not([disabled]):hover {
+  @apply bg-red-500 text-white;
+}
+
+.vs-btn-danger-outline:focus {
+  @apply ring-red-600 bg-red-500 text-white;
+}
+
+.vs-btn-link {
+  @apply bg-transparent text-primary border-2 border-transparent !px-1 !py-0;
+}
+
+.vs-btn-link:not([disabled]):hover {
+  @apply text-primary-800;
+}
+
+.vs-btn-link:focus {
+  @apply ring-1 ring-primary-800;
+}
+
+/* Button sizes */
+.vs-btn-auto {
+  @apply py-2 px-4;
+}
+
+.vs-btn-sm {
+  @apply p-2 text-xs;
+}
+
+.vs-btn-lg {
+  @apply py-4 px-8;
+}
+
+.vs-btn-xl {
+  @apply py-5 px-10;
+}

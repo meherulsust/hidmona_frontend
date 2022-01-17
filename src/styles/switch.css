@@ -1,0 +1,57 @@
+.vs-switch {
+  width: 40px;
+  height: 16px;
+
+  @apply relative;
+  @apply inline-block;
+  @apply cursor-pointer;
+}
+
+.vs-switch.vs-switch-disabled {
+  @apply opacity-50;
+  @apply cursor-not-allowed;
+}
+
+.vs-switch .vs-switch-input {
+  @apply w-0;
+  @apply h-0;
+  @apply opacity-0;
+}
+
+.vs-switch .vs-switch-slider {
+  transition: 0.4s;
+  @apply bg-grey-light;
+  @apply absolute;
+  @apply cursor-pointer;
+  @apply top-0;
+  @apply left-0;
+  @apply right-0;
+  @apply bottom-0;
+  @apply rounded-full;
+}
+
+.vs-switch.vs-switch-disabled .vs-switch-slider {
+  @apply cursor-not-allowed;
+}
+
+.vs-switch .vs-switch-slider:before {
+  content: '';
+  height: 21px;
+  width: 21px;
+  bottom: -3px;
+  transition: 0.4s;
+
+  @apply absolute;
+  @apply left-0;
+  @apply bg-grey-lighter;
+  @apply rounded-full;
+}
+
+.vs-switch .vs-switch-input:checked + .vs-switch-slider {
+  @apply bg-grey-lighter;
+}
+
+.vs-switch .vs-switch-input:checked + .vs-switch-slider:before {
+  @apply bg-primary-dark;
+  transform: translateX(20px);
+}

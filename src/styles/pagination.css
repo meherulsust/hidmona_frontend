@@ -1,0 +1,70 @@
+.vs-pagination-container {
+  @apply flex;
+}
+
+.vs-pagination-container .vs-pagination-size-selector {
+  @apply flex;
+  @apply flex-col;
+  @apply justify-center;
+}
+
+.vs-pagination-container .vs-pagination-size-selector .vs-select-container,
+.vs-pagination-container .vs-pagination-size-selector .vs-selector {
+  min-width: 0;
+  width: 65px;
+}
+
+.vs-pagination-container .vs-pagination-numbers {
+  @apply flex;
+  @apply flex-1;
+  @apply flex-col;
+  @apply items-end;
+}
+
+.vs-pagination-container .vs-pagination-numbers .vs-pagination-number {
+  @apply flex;
+  @apply bg-primary-600;
+  @apply mr-2;
+  @apply items-center;
+  @apply text-sm;
+  @apply justify-center;
+  @apply text-white;
+}
+
+.vs-pagination-container .vs-pagination-numbers {
+  min-width: 25px;
+  padding: 0 0.5rem !important;
+}
+
+.vs-pagination-container
+  .vs-pagination-numbers
+  .vs-pagination-number.is-active {
+  @apply bg-primary;
+}
+
+.vs-pagination-container .vs-pagination-numbers .vs-pagination-number:disabled {
+  @apply cursor-not-allowed;
+}
+
+.vs-pagination-container
+  .vs-pagination-numbers
+  .vs-pagination-number:last-child {
+  @apply mr-0;
+}
+
+.vs-pagination-container .vs-pagination-numbers .vs-pagination-number:hover {
+  @apply bg-primary;
+  @apply bg-primary-800;
+}
+
+.vs-pagination-container .vs-pagination-numbers .vs-number-range {
+  @apply text-primary;
+  @apply underline;
+  @apply font-bold;
+  @apply mx-2;
+}
+
+.vs-pagination-container .vs-pagination-numbers .vs-pagination-number i {
+  font-size: 17px;
+  line-height: 0;
+}

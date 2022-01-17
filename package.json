@@ -1,0 +1,81 @@
+{
+  "name": "vivasoft-starter-kit",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "prepare": "husky install",
+    "mock:api": "nodemon mock-api/server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "storybook": "start-storybook -p 9000",
+    "build-storybook": "build-storybook"
+  },
+  "dependencies": {
+    "axios": "0.21.1",
+    "clsx": "1.1.1",
+    "http-proxy-middleware": "2.0.1",
+    "next": "11.1.2",
+    "next-auth": "3.29.0",
+    "nprogress": "0.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-query": "3.19.6",
+    "winston": "3.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@next/eslint-plugin-next": "^11.1.2",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-knobs": "^6.3.1",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.3.12",
+    "@tailwindcss/forms": "^0.3.3",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^14.14.41",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^17.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "autoprefixer": "^10.2.5",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.1.0",
+    "babel-loader": "^8.2.3",
+    "eslint": "^7.24.0",
+    "eslint-config-next": "^11.1.2",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-plugin-flowtype": "^5.7.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "express": "^4.17.1",
+    "husky": "^6.0.0",
+    "jest": "^27.1.0",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.12",
+    "postcss": "^8.3.6",
+    "postcss-import": "^14.0.2",
+    "prettier": "^2.2.1",
+    "storybook": "^6.3.12",
+    "tailwindcss": "^2.2.15",
+    "typescript": "^4.3.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "mock-api/"
+    ]
+  }
+}

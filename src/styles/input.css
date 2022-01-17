@@ -1,0 +1,64 @@
+.vs-input-container {
+  @apply flex flex-col;
+}
+
+.vs-input-container legend,
+.vs-input-container label {
+  font-size: 12px;
+  line-height: 16px;
+
+  @apply ml-1 mb-1 text-primary uppercase cursor-pointer;
+}
+
+.vs-input-container .vs-input-hint {
+  @apply inline-block text-primary text-xs ml-1 mt-1;
+}
+
+.vs-input-container input {
+  font-size: 12px;
+  line-height: 14px;
+
+  @apply w-full border-2 border-gray-400 text-primary rounded transition duration-200 ease-linear;
+}
+
+.vs-input-container input:focus {
+  @apply border-primary text-gray-900 outline-none ring-2 ring-opacity-70 ring-primary;
+}
+
+.vs-input-container.vs-input-disabled input {
+  @apply cursor-not-allowed bg-gray-600 text-white;
+}
+
+.vs-input-container.vs-input-disabled label,
+.vs-input-container.vs-input-disabled legend,
+.vs-input-container.vs-input-disabled .vs-input-hint {
+  @apply text-gray-600;
+}
+
+.vs-input-container.vs-input-error label,
+.vs-input-container.vs-input-error legend {
+  @apply text-red-600;
+}
+
+.vs-input-container.vs-input-error input {
+  @apply text-red-600 border-red-500;
+}
+
+.vs-input-container.vs-input-error input:focus {
+  @apply outline-none ring-2 ring-red-500 ring-opacity-70;
+}
+
+.vs-input-container.vs-input-error input:disabled {
+  background: rgba(230, 106, 106, 0.2);
+}
+.vs-input-container.vs-input-error input:disabled {
+  @apply text-gray-600;
+}
+
+.vs-input-container.vs-input-error input::placeholder {
+  @apply text-red-600 opacity-100;
+}
+
+.vs-input-container.vs-input-error .vs-input-hint {
+  @apply text-red-600 mt-1 ml-1;
+}

@@ -1,0 +1,76 @@
+.vs-checkbox-container {
+  @apply flex;
+  @apply cursor-pointer;
+  @apply select-none;
+  @apply text-primary;
+}
+
+.vs-checkbox-container.vs-checkbox-disabled {
+  @apply cursor-not-allowed;
+  @apply opacity-50;
+}
+
+.vs-checkbox-container .vs-checkbox-label {
+  @apply flex;
+  @apply items-center;
+  @apply uppercase;
+}
+
+.vs-checkbox-container .vs-checkbox {
+  @apply border-2;
+  @apply border-primary;
+  @apply rounded;
+  @apply relative;
+  @apply mr-2;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+}
+
+.vs-checkbox-container .vs-checkbox.checked {
+  @apply flex;
+  @apply bg-primary;
+  @apply text-white;
+}
+
+.vs-checkbox-container.vs-checkbox-sm .vs-checkbox {
+  width: 17px;
+  height: 17px;
+}
+
+.vs-checkbox-container.vs-checkbox-sm .vs-checkbox-label {
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.vs-checkbox-container.vs-checkbox-md .vs-checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.vs-checkbox-container.vs-checkbox-md .vs-checkbox-label {
+  font-size: 13.5px;
+  line-height: 20px;
+}
+
+.vs-checkbox-container.vs-checkbox-lg .vs-checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.vs-checkbox-container.vs-checkbox-lg .vs-checkbox-label {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.vs-checkbox-container.vs-checkbox-sm .vs-checkbox.checked {
+  font-size: 13px;
+}
+
+.vs-checkbox-container.vs-checkbox-md .vs-checkbox.checked {
+  font-size: 16px;
+}
+
+.vs-checkbox-container.vs-checkbox-lg .vs-checkbox.checked {
+  font-size: 20px;
+}

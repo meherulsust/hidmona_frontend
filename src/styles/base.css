@@ -1,0 +1,21 @@
+body {
+    @apply font-normal;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+}
+  
+  p {
+    @apply mb-4;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  a {
+    transition: all 0.3s ease-in-out 0s;
+  }
+  
+  .main {
+    min-height: calc(100vh - 148px);
+  }

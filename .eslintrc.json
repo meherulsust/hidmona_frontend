@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "react-app",
+    "plugin:@next/next/recommended",
+    "plugin:@next/next/core-web-vitals",
+    "prettier"
+  ],
+  "ignorePatterns": ["*.json"]
+}

@@ -1,0 +1,27 @@
+.vs-loader {
+  @apply rounded-full;
+
+  border-style: solid;
+  border-top-color: theme('colors.primary.dark') !important;
+  border-bottom-color: theme('colors.grey.dark') !important;
+  border-left-color: theme('colors.grey.dark') !important;
+  border-right-color: theme('colors.grey.dark') !important;
+}
+
+.vs-loader-container {
+  @apply left-0;
+  @apply top-0;
+  @apply flex;
+  @apply justify-center;
+  @apply items-center;
+  @apply z-10;
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

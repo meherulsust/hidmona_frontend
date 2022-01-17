@@ -1,0 +1,27 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+@import './nprogress.css';
+@import './button.css';
+@import './input.css';
+@import './checkbox.css';
+@import './modal.css';
+@import './pagination.css';
+
+@import 'tailwindcss/utilities';
+
+#nprogress .bar {
+  background: #e2136e;
+  height: 3px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #e2136e, 0 0 5px #e2136e;
+}
+
+@layer components {
+  .login-input input:not(:placeholder-shown) + span,
+  .login-input input:focus + span {
+    @apply -translate-y-2.5 px-1 bg-white;
+  }
+}
