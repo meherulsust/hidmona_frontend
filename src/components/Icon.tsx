@@ -284,7 +284,7 @@ function PencilAltIcon(props: React.SVGAttributes<SVGElement>) {
       fill="none"
       width={24}
       height={24}
-      viewBox="0 0 24 24"
+      viewBox="0 0 20 20"
       stroke="currentColor"
       {...props}
     >

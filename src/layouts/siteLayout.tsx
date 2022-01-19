@@ -1,5 +1,4 @@
 import { PropsWithChildren } from 'react';
-import Footer from './footer';
 import Header from './header';
 import Sidebar from './sidebar';
 
@@ -9,7 +8,7 @@ const SiteLayout = ({ children }: PropsWithChildren<{}>) => {
       <div className="relative min-h-screen md:flex">
         <div className="flex justify-between text-gray-100 bg-gray-800 md:hidden">
           <a href="#" className="block p-4 font-bold text-white">
-           Hidmona Money Transfer
+            Hidmona Money Transfer
           </a>
           <button className="p-4 mobile-menu-button focus:outline-none focus:bg-gray-700">
             <svg
@@ -19,18 +18,15 @@ const SiteLayout = ({ children }: PropsWithChildren<{}>) => {
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path
-                strokeWidth="2"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
 
         <Sidebar />
-          <main className="flex-1 bg-white-400">
+        <main className="flex-1 bg-white-400">
           <Header />
-          {children}
+          <div className="p-4">{children}</div>
           {/* <Footer /> */}
         </main>
       </div>

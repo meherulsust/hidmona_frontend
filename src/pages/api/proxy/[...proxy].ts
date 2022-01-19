@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import proxyHandler from 'lib/server/proxy-request-handle';
-import { getToken } from 'next-auth/jwt';
 import logger from 'lib/server/logger';
+import proxyHandler from 'lib/server/proxy-request-handle';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { getToken } from 'next-auth/jwt';
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,6 +12,7 @@ export default async function handler(
     ? `${req.headers['origin']}/`
     : req.headers['referer'];
   const targetOrigin = `${process.env.NEXTAUTH_URL}/`;
+  console.log(targetOrigin);
 
   if (!sourceOrigin || sourceOrigin.indexOf(targetOrigin) === -1) {
     logger.warn(

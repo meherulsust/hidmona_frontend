@@ -36,3 +36,57 @@ type RefreshTokenResponse = {
   // In seconds
   expiry_time: string;
 };
+
+type UserSignup = {
+  first_name: string;
+  last_name: string;
+  address: string;
+  phone: string;
+  note: string;
+  email: string;
+  password: string;
+  proposed_organization_name: string;
+};
+
+type PersonMeta = {
+  total: number;
+  limit: number;
+  offset: number;
+};
+
+type PersonOrganization = {
+  name: string;
+  status: number;
+  id: number;
+};
+
+type Person = {
+  id: number;
+  full_name: string;
+  email: string;
+  phone: string;
+};
+
+interface UserResponse extends PersonMeta {
+  items: Person[];
+}
+
+type UserGroupResponse = {
+  id: number;
+  name: string;
+  description: string;
+};
+
+type CreatedBy = {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+};
+
+type UpdateBy = {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+};
